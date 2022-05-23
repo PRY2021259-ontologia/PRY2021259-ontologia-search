@@ -75,32 +75,6 @@ namespace Ontologia.SPARQL.Server.Services
                 };
                 resources.Add(tempResult);
             }
-
-            sparqlQuery.CommandText = "SELECT ?x ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
-                                      "WHERE { " +
-                                      $"?x data:Tipo ?Tipo. FILTER regex(?Tipo, \"{parameter}\", \"i\") " +
-                                      "?x data:Descripcion ?Descripcion. " +
-                                      "?x data:NombreComun ?NombreComun. " +
-                                      "OPTIONAL { ?x data:NombreCientifico ?NombreCientifico. } " +
-                                      "}";
-            result = pst.ExecuteQuery(sparqlQuery.ToString());
-            resultSet = (SparqlResultSet)result;
-            if (resultSet.IsEmpty) return resources;
-            foreach (var setResult in resultSet.Results)
-            {
-                var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.NombreRecurso.Contains(typeString));
-                if (flagDuplicated) continue;
-                var tempResult = new ResponseQuery()
-                {
-                    NombreRecurso = typeString,
-                    Descripcion = setResult["Descripcion"].ToString() ?? "",
-                    Nombre = setResult["NombreComun"].ToString() ?? "",
-                    NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
-                    TipoInfeccion = setResult["Tipo"].ToString() ?? ""
-                };
-                resources.Add(tempResult);
-            }
             sparqlQuery.CommandText = "SELECT ?x ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
                                       "WHERE { " +
                                       $"?x data:Tipo ?Tipo. FILTER regex(?Tipo, \"{parameter}\", \"i\") " +
