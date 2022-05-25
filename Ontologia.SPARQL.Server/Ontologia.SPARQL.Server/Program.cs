@@ -9,8 +9,16 @@ builder.Configuration
     .AddEnvironmentVariables();
 
 // Add services to the container.
-builder.Services.AddScoped<SearchService>();
 builder.Services.AddControllers();
+builder.Services.AddCors(
+    options => options.AddDefaultPolicy(b =>
+        b.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .DisallowCredentials()));
+
+builder.Services.AddScoped<SearchService>();
+builder.Services.AddRouting(options => options.LowercaseUrls = true);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -26,7 +34,8 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
-
+app.UseCors();
+app.UseRouting();
 app.UseAuthorization();
 app.UseEndpoints(endpoints =>
 {
