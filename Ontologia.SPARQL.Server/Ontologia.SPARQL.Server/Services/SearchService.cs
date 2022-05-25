@@ -17,13 +17,13 @@ namespace Ontologia.SPARQL.Server.Services
         public IEnumerable<ResponseQuery> GetResources(string parameter)
         {
             var searchUrl = _configuration.GetSection("Ontologia:Base_Url").Value;
-
+            var dataUrl = _configuration.GetSection("Ontologia:Data_Url").Value;
             var resources = new List<ResponseQuery>();
 
             FusekiConnector fuseki = new FusekiConnector(searchUrl);
             PersistentTripleStore pst = new PersistentTripleStore(fuseki);
             var sparqlQuery = new SparqlParameterizedString();
-            sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{searchUrl}#"));
+            sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{dataUrl}#"));
             sparqlQuery.CommandText = "SELECT ?x ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
                                       "WHERE {" +
                                       $"?x data:Descripcion ?Descripcion. FILTER regex(?Descripcion, \"{parameter}\", \"i\")" +
