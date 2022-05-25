@@ -22,12 +22,12 @@ jobs:
           dotnet-version: '6.0.x'
           include-prerelease: true
 
-      - name: Build with dotnet
-        run: dotnet build --configuration Release
-
-      - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
+      - name: Build and Publish with dotnet
+        run: |
+          cd Ontologia.SPARQL.Server
+          dotnet restore
+          dotnet build --configuration Release
+          dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -35,7 +35,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: 'Production'
@@ -46,6 +46,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: .net-app
+          path: /home/runner/artifact-to-publish
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -54,4 +55,4 @@ jobs:
           app-name: 'search-ontologia'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E6B7E52AC868485FA9DCB059452CF7B6 }}
-          package: .
+          package: /home/runner/artifact-to-publish
