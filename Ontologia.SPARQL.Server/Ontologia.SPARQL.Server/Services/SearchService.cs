@@ -16,8 +16,8 @@ namespace Ontologia.SPARQL.Server.Services
         }
         public IEnumerable<ResponseQuery> GetResources(string parameter)
         {
-            var searchUrl = _configuration.GetSection("Ontologia:Base_Url").Value;
-            var dataUrl = _configuration.GetSection("Ontologia:Data_Url").Value;
+            var searchUrl = _configuration.GetSection("Ontologia:BaseUrl").Value;
+            var dataUrl = _configuration.GetSection("Ontologia:DataUrl").Value;
             var resources = new List<ResponseQuery>();
 
             FusekiConnector fuseki = new FusekiConnector(searchUrl);
