@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy ASP.Net Core app to Azure Web App - search-server-ontologia
+name: Build and deploy ASP.Net Core app to Azure Web App - search-ontologia
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -28,7 +28,6 @@ jobs:
           dotnet restore
           dotnet build --configuration Release
           dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
         with:
@@ -53,7 +52,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'search-server-ontologia'
+          app-name: 'search-ontologia'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_050E0C85736D4DBE82194017F91E250B }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E6B7E52AC868485FA9DCB059452CF7B6 }}
           package: /home/runner/artifact-to-publish
