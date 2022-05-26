@@ -34,5 +34,12 @@ namespace Ontologia.SPARQL.Server.Controllers
             var resources = _searchService.GetSymptoms(InfeccionEnum.Enfermedad.ToString());
             return Ok(resources);
         }
+
+        [HttpGet("infeccion/{infeccionId}")]
+        public ActionResult GetInfeccionData([FromRoute] string infeccionId)
+        {
+            var resource = _searchService.GetInfectionData(infeccionId);
+            return Ok(resource);
+        }
     }
 }

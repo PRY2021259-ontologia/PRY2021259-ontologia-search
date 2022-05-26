@@ -1,4 +1,5 @@
-﻿using System.Configuration.Internal;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Configuration.Internal;
 using System.Drawing;
 using Ontologia.SPARQL.Server.Models;
 using VDS.RDF;
@@ -134,6 +135,40 @@ namespace Ontologia.SPARQL.Server.Services
             return rawResource.Substring(rawResource.IndexOf("#", StringComparison.Ordinal) + 1);
         }
 
+        public InfeccionGraph GetInfectionData(string infeccionId)
+        {
+            var searchUrl = _configuration.GetSection("Ontologia:BaseUrl").Value;
+            var dataUrl = _configuration.GetSection("Ontologia:DataUrl").Value;
+            
+
+            FusekiConnector fuseki = new FusekiConnector(searchUrl);
+            PersistentTripleStore pst = new PersistentTripleStore(fuseki);
+            var sparqlQuery = new SparqlParameterizedString();
+            sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{dataUrl}#"));
+                        sparqlQuery.CommandText = "SELECT ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
+                                                  "WHERE { " +
+                                                  $"data:{infeccionId} data:NombreComun ?NombreComun. " +
+                                                  $"data:{infeccionId} data:Tipo ?Tipo. " +
+                                                  $"data:{infeccionId} data:NombreCientifico ?NombreCientifico. " +
+                                                  $"data:{infeccionId} data:Descripcion ?Descripcion. " +
+                                                  "}";
+            var result = pst.ExecuteQuery(sparqlQuery.ToString());
+
+            var resultSet = (SparqlResultSet)result;
+            if (resultSet.IsEmpty) return new InfeccionGraph();
+            var setResult = resultSet.Results.FirstOrDefault();
+
+            var resource = new InfeccionGraph()
+            {
+                Descripcion = setResult["Descripcion"].ToString(),
+                Tipo = setResult["Tipo"].ToString(),
+                NombreCientifico = setResult["NombreCientifico"].ToString(),
+                NombreComun = setResult["NombreComun"].ToString(),
+                InfeccionId = infeccionId
+            };
+
+            return resource;
+        }
         public IEnumerable<SymptomQuery> GetSymptoms(string value)
         {
             var searchUrl = _configuration.GetSection("Ontologia:BaseUrl").Value;
