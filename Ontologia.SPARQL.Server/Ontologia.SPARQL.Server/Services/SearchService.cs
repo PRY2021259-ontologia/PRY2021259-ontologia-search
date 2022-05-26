@@ -129,9 +129,46 @@ namespace Ontologia.SPARQL.Server.Services
             }
             return resources;
         }
-        public string getTypeString(string rawResource)
+        private string getTypeString(string rawResource)
         {
             return rawResource.Substring(rawResource.IndexOf("#", StringComparison.Ordinal) + 1);
+        }
+
+        public IEnumerable<SymptomQuery> GetSymptoms(string value)
+        {
+            var searchUrl = _configuration.GetSection("Ontologia:BaseUrl").Value;
+            var dataUrl = _configuration.GetSection("Ontologia:DataUrl").Value;
+            var resources = new List<SymptomQuery>();
+
+            FusekiConnector fuseki = new FusekiConnector(searchUrl);
+            PersistentTripleStore pst = new PersistentTripleStore(fuseki);
+            var sparqlQuery = new SparqlParameterizedString();
+            sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{dataUrl}#"));
+            sparqlQuery.Namespaces.AddNamespace("rdfs", new Uri("http://www.w3.org/2000/01/rdf-schema#"));
+            sparqlQuery.CommandText = "SELECT ?x ?Comentario ?y ?Infeccion " +
+                                      "WHERE { " +
+                                      $"?y data:Tipo \"{value}\". " + 
+                                      "?x data:es_sintoma_de ?y. " +
+                                      "?y data:NombreComun ?Infeccion. " +
+                                      "?x rdfs:comment ?Comentario. }";
+            var result = pst.ExecuteQuery(sparqlQuery.ToString());
+
+            var resultSet = (SparqlResultSet)result;
+            if (resultSet.IsEmpty) return resources;
+            foreach (var setResult in resultSet.Results)
+            {
+                var sintomaId = getTypeString(setResult["x"].ToString());
+                var infeccionId = getTypeString(setResult["y"].ToString());
+                var tempResult = new SymptomQuery()
+                {
+                    SintomaId = sintomaId,
+                    SintomaComentario = setResult["Comentario"].ToString() ?? "",
+                    InfeccionId = infeccionId,
+                    InfeccionNombre = setResult["Infeccion"].ToString() ?? ""
+                };
+                resources.Add(tempResult);
+            }
+            return resources;
         }
     }
 }
