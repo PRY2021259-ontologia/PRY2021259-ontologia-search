@@ -41,7 +41,7 @@ namespace Ontologia.SPARQL.Server.Services
                 var typeString = getTypeString(setResult["x"].ToString());
                 var tempResult = new ResponseQuery()
                 {
-                    NombreRecurso = typeString,
+                    OntologyId = typeString,
                     Descripcion = setResult["Descripcion"].ToString() ?? "",
                     Nombre = setResult["NombreComun"].ToString() ?? "",
                     NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
@@ -64,11 +64,11 @@ namespace Ontologia.SPARQL.Server.Services
             foreach (var setResult in resultSet.Results)
             {
                 var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.NombreRecurso.Contains(typeString));
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
                 if (flagDuplicated) continue;
                 var tempResult = new ResponseQuery()
                 {
-                    NombreRecurso = typeString,
+                    OntologyId = typeString,
                     Descripcion = setResult["Descripcion"].ToString() ?? "",
                     Nombre = setResult["NombreComun"].ToString() ?? "",
                     NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
@@ -89,11 +89,11 @@ namespace Ontologia.SPARQL.Server.Services
             foreach (var setResult in resultSet.Results)
             {
                 var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.NombreRecurso.Contains(typeString));
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
                 if (flagDuplicated) continue;
                 var tempResult = new ResponseQuery()
                 {
-                    NombreRecurso = typeString,
+                    OntologyId = typeString,
                     Descripcion = setResult["Descripcion"].ToString() ?? "",
                     Nombre = setResult["NombreComun"].ToString() ?? "",
                     NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
@@ -116,11 +116,11 @@ namespace Ontologia.SPARQL.Server.Services
             foreach (var setResult in resultSet.Results)
             {
                 var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.NombreRecurso.Contains(typeString));
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
                 if (flagDuplicated) continue;
                 var tempResult = new ResponseQuery()
                 {
-                    NombreRecurso = typeString,
+                    OntologyId = typeString,
                     Descripcion = setResult["Descripcion"].ToString() ?? "",
                     Nombre = setResult["NombreComun"].ToString() ?? "",
                     NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
@@ -135,7 +135,7 @@ namespace Ontologia.SPARQL.Server.Services
             return rawResource.Substring(rawResource.IndexOf("#", StringComparison.Ordinal) + 1);
         }
 
-        public InfeccionGraph GetInfectionData(string infeccionId)
+        public InfeccionGraph GetInfectionData(string ontologyId)
         {
             var searchUrl = _configuration.GetSection("Ontologia:BaseUrl").Value;
             var dataUrl = _configuration.GetSection("Ontologia:DataUrl").Value;
@@ -147,10 +147,10 @@ namespace Ontologia.SPARQL.Server.Services
             sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{dataUrl}#"));
                         sparqlQuery.CommandText = "SELECT ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
                                                   "WHERE { " +
-                                                  $"data:{infeccionId} data:NombreComun ?NombreComun. " +
-                                                  $"data:{infeccionId} data:Tipo ?Tipo. " +
-                                                  $"data:{infeccionId} data:NombreCientifico ?NombreCientifico. " +
-                                                  $"data:{infeccionId} data:Descripcion ?Descripcion. " +
+                                                  $"data:{ontologyId} data:NombreComun ?NombreComun. " +
+                                                  $"data:{ontologyId} data:Tipo ?Tipo. " +
+                                                  $"data:{ontologyId} data:NombreCientifico ?NombreCientifico. " +
+                                                  $"data:{ontologyId} data:Descripcion ?Descripcion. " +
                                                   "}";
             var result = pst.ExecuteQuery(sparqlQuery.ToString());
 
@@ -164,7 +164,7 @@ namespace Ontologia.SPARQL.Server.Services
                 Tipo = setResult["Tipo"].ToString(),
                 NombreCientifico = setResult["NombreCientifico"].ToString(),
                 NombreComun = setResult["NombreComun"].ToString(),
-                InfeccionId = infeccionId
+                InfeccionId = ontologyId
             };
 
             return resource;
