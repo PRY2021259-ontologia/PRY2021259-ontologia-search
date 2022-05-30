@@ -27,7 +27,7 @@ namespace Ontologia.SPARQL.Server.Controllers
         [Produces("application/json")]
         public ActionResult OntoSearch([FromQuery] string parameter)
         {
-            var resources = _searchService.GetResources(parameter);
+            var resources = _searchService.GetResources(parameter.ToLower());
             return Ok(resources);
         }
 
