@@ -38,15 +38,8 @@ namespace Ontologia.SPARQL.Server.Services
             if (resultSet.IsEmpty) return resources;
             foreach (var setResult in resultSet.Results)
             {
-                var typeString = getTypeString(setResult["x"].ToString());
-                var tempResult = new ResponseQuery()
-                {
-                    OntologyId = typeString,
-                    Descripcion = setResult["Descripcion"].ToString() ?? "",
-                    Nombre = setResult["NombreComun"].ToString() ?? "",
-                    NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
-                    TipoInfeccion = setResult["Tipo"].ToString() ?? ""
-                };
+                var ontologyId = getTypeString(setResult["x"].ToString());
+                var tempResult = convertSparqlResultToResponseQuery(setResult, ontologyId);
                 resources.Add(tempResult);
             }
 
@@ -63,17 +56,10 @@ namespace Ontologia.SPARQL.Server.Services
             if (resultSet.IsEmpty) return resources;
             foreach (var setResult in resultSet.Results)
             {
-                var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
+                var ontologyId = getTypeString(setResult["x"].ToString());
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(ontologyId));
                 if (flagDuplicated) continue;
-                var tempResult = new ResponseQuery()
-                {
-                    OntologyId = typeString,
-                    Descripcion = setResult["Descripcion"].ToString() ?? "",
-                    Nombre = setResult["NombreComun"].ToString() ?? "",
-                    NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
-                    TipoInfeccion = setResult["Tipo"].ToString() ?? ""
-                };
+                var tempResult = convertSparqlResultToResponseQuery(setResult, ontologyId);
                 resources.Add(tempResult);
             }
             sparqlQuery.CommandText = "SELECT ?x ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
@@ -88,17 +74,10 @@ namespace Ontologia.SPARQL.Server.Services
             if (resultSet.IsEmpty) return resources;
             foreach (var setResult in resultSet.Results)
             {
-                var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
+                var ontologyId = getTypeString(setResult["x"].ToString());
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(ontologyId));
                 if (flagDuplicated) continue;
-                var tempResult = new ResponseQuery()
-                {
-                    OntologyId = typeString,
-                    Descripcion = setResult["Descripcion"].ToString() ?? "",
-                    Nombre = setResult["NombreComun"].ToString() ?? "",
-                    NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
-                    TipoInfeccion = setResult["Tipo"].ToString() ?? ""
-                };
+                var tempResult = convertSparqlResultToResponseQuery(setResult, ontologyId);
                 resources.Add(tempResult);
             }
 
@@ -115,17 +94,10 @@ namespace Ontologia.SPARQL.Server.Services
             if (resultSet.IsEmpty) return resources;
             foreach (var setResult in resultSet.Results)
             {
-                var typeString = getTypeString(setResult["x"].ToString());
-                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(typeString));
+                var ontologyId = getTypeString(setResult["x"].ToString());
+                var flagDuplicated = resources.Exists(i => i.OntologyId.Contains(ontologyId));
                 if (flagDuplicated) continue;
-                var tempResult = new ResponseQuery()
-                {
-                    OntologyId = typeString,
-                    Descripcion = setResult["Descripcion"].ToString() ?? "",
-                    Nombre = setResult["NombreComun"].ToString() ?? "",
-                    NombreCientifico = setResult["NombreCientifico"].ToString() ?? "",
-                    TipoInfeccion = setResult["Tipo"].ToString() ?? ""
-                };
+                var tempResult = convertSparqlResultToResponseQuery(setResult, ontologyId);
                 resources.Add(tempResult);
             }
             return resources;
@@ -157,17 +129,10 @@ namespace Ontologia.SPARQL.Server.Services
             var resultSet = (SparqlResultSet)result;
             if (resultSet.IsEmpty) return new InfeccionGraph();
             var setResult = resultSet.Results.FirstOrDefault();
-
-            var resource = new InfeccionGraph()
-            {
-                Descripcion = setResult["Descripcion"].ToString(),
-                Tipo = setResult["Tipo"].ToString(),
-                NombreCientifico = setResult["NombreCientifico"].ToString(),
-                NombreComun = setResult["NombreComun"].ToString(),
-                InfeccionId = ontologyId
-            };
-
+            if (setResult == null) return new InfeccionGraph();
+            var resource = convertSparqlResultToInfeccionGraph(setResult, ontologyId);
             return resource;
+            
         }
         public IEnumerable<SymptomQuery> GetSymptoms(string value)
         {
@@ -192,18 +157,49 @@ namespace Ontologia.SPARQL.Server.Services
             if (resultSet.IsEmpty) return resources;
             foreach (var setResult in resultSet.Results)
             {
-                var sintomaId = getTypeString(setResult["x"].ToString());
-                var infeccionId = getTypeString(setResult["y"].ToString());
-                var tempResult = new SymptomQuery()
-                {
-                    SintomaId = sintomaId,
-                    SintomaComentario = setResult["Comentario"].ToString() ?? "",
-                    InfeccionId = infeccionId,
-                    InfeccionNombre = setResult["Infeccion"].ToString() ?? ""
-                };
+                if (setResult == null) continue;
+                var tempResult = ConvertSparqlResultToSymptomQuery(setResult);
                 resources.Add(tempResult);
             }
             return resources;
+        }
+
+        private ResponseQuery convertSparqlResultToResponseQuery(SparqlResult result, string ontologyId)
+        {
+            var tempResult = new ResponseQuery()
+            {
+                OntologyId = ontologyId,
+                Descripcion = result["Descripcion"].ToString() ?? "",
+                Nombre = result["NombreComun"].ToString() ?? "",
+                NombreCientifico = result["NombreCientifico"].ToString() ?? "",
+                TipoInfeccion = result["Tipo"].ToString() ?? ""
+            };
+            return tempResult;
+        }
+        private InfeccionGraph convertSparqlResultToInfeccionGraph(SparqlResult result, string ontologyId)
+        {
+            var resource = new InfeccionGraph()
+            {
+                Descripcion = result["Descripcion"].ToString(),
+                Tipo = result["Tipo"].ToString(),
+                NombreCientifico = result["NombreCientifico"].ToString(),
+                NombreComun = result["NombreComun"].ToString(),
+                InfeccionId = ontologyId
+            };
+            return resource;
+        }
+        private SymptomQuery ConvertSparqlResultToSymptomQuery(SparqlResult result)
+        {
+            var sintomaId = getTypeString(result["x"].ToString() ?? "");
+            var infeccionId = getTypeString(result["y"].ToString() ?? "");
+            var tempResult = new SymptomQuery()
+            {
+                SintomaId = sintomaId,
+                SintomaComentario = result["Comentario"].ToString() ?? "",
+                InfeccionId = infeccionId,
+                InfeccionNombre = result["Infeccion"].ToString() ?? ""
+            };
+            return tempResult;
         }
     }
 }

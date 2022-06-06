@@ -1,0 +1,1826 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://localhost:3030/ontopotato/data#"
+     xml:base="http://localhost:3030/ontopotato/data"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:data="http://localhost:3030/ontopotato/data#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://localhost:3030/ontopotato/data">
+        <owl:versionIRI rdf:resource="http://localhost:3030/ontopotato/data"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sinonimos -->
+
+    <owl:AnnotationProperty rdf:about="http://localhost:3030/ontopotato/data#sinonimos">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#es_agente_causal_de -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:3030/ontopotato/data#es_agente_causal_de">
+        <owl:inverseOf rdf:resource="http://localhost:3030/ontopotato/data#tiene_agente_causal"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <rdfs:range rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#es_sintoma_de -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:3030/ontopotato/data#es_sintoma_de">
+        <owl:inverseOf rdf:resource="http://localhost:3030/ontopotato/data#tiene_sintoma"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <rdfs:range rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#tiene_agente_causal -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:3030/ontopotato/data#tiene_agente_causal">
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#tiene_sintoma -->
+
+    <owl:ObjectProperty rdf:about="http://localhost:3030/ontopotato/data#tiene_sintoma">
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#AfectaUnPorcentajeDeHasta -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#AfectaUnPorcentajeDeHasta">
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#Descripcion -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#Descripcion">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#Nombre -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#Nombre">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#NombreCientifico -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#NombreCientifico">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#NombreComun -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#NombreComun">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#Tipo -->
+
+    <owl:DatatypeProperty rdf:about="http://localhost:3030/ontopotato/data#Tipo">
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <rdfs:domain rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#AgenteCausal -->
+
+    <owl:Class rdf:about="http://localhost:3030/ontopotato/data#AgenteCausal">
+        <sinonimos rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Patógeno, Bacteria, Hongo, Nematodo, Virus, Chromista</sinonimos>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#Infeccion -->
+
+    <owl:Class rdf:about="http://localhost:3030/ontopotato/data#Infeccion">
+        <sinonimos rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad, Plaga</sinonimos>
+    </owl:Class>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#Sintoma -->
+
+    <owl:Class rdf:about="http://localhost:3030/ontopotato/data#Sintoma">
+        <sinonimos rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesión, Herida, Daño</sinonimos>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa1">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf1"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El tizón tardío es causado por el patógeno Phytophthora infestans. El nombre de Phytophthora deriva de dos voces griegas: Phyto = planta y phthora = destructor, por lo tanto, Phytophthora, significa destructor de plantas. Los patógenos que se encuentran dentro del Reino de los Chromista se caracterizan porque la pared celular tiene celulosa, son diploides, el micelio no tiene septas y son bisexuales. Además, el patógeno, se caracteriza por tener esporangióforos de crecimiento ilimitado, esporangios papilados en forma de limón, zoosporas biflageladas (producidas en condiciones ambientales de temperatura 12 a 15°C y humedad relativa 95 a 100%) y oosporas anfígenas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phytophthora infestans</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phytophthora infestans</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chromista</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa10 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa10">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf8"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por el hongo Synchytrium endobioticum de la clase Chyitridiomycetes, que se caracterizan por carecer de micelio. El hongo produce dos tipos de esporangios: a) de verano o propagación y b) de invierno o descanso. Los dos tipos de esporangios producen zoosporas, las cuales se enquistan y penetran a las células epidérmicas de los tejidos susceptibles de tallos, estolones y tubérculos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synchytrium endobioticum</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Synchytrium endobioticum</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa11 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa11">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf9"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por varias especies del hongo Rosellinia (fase sexual). La fase asexual de este hongo es Dematophora. El hongo se caracteriza por formar rizomorfos en forma de cordones, que son inicialmente de color blanco y después se ponen oscuros. Estos rizomorfos, se extienden por el suelo en todas direcciones y cubren parcial o totalmente la superficie del huésped. El micelio es septado, al comienzo hialino y después se oscurece; presenta anastomosis y abultamientos cerca de la septa. En la superficie de las raíces y en los tubérculos afectados, el hongo forma estructuras duras de color negro que constituyen los esclerocios. El hongo también produce synemas con conidioforos aserrados y ramificados, donde se forman las conidias elipsoides.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rosellinia y Dematophora</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rosellinia y Dematophora</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa12 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa12">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf10"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lo órganos que son afectado por el hongo Colletotrichum atramentarium se descortezan y mueren, por lo que los tubérculos se quedan pequeños.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colletotrichum atramentarium</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Colletotrichum atramentarium</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa13 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa13">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf11"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estas especies de hongos afectan principalmente a las plantas en desarrollo.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sclerotinia sclerotiorum y Sclerotinia minor Jagger</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sclerotinia sclerotiorum y Sclerotinia minor Jagger</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa14 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa14">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf12"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas afectadas por este hongo muestran marchitez y las hojas inferiores clorosis.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sclerotium rolfsii</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sclerotium rolfsii</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa15 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa15">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf13"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Está presente en las zonas paperas ubicadas en climas cálidos y húmedos. Afecta especialmente a plantas de la familia Solanaceae. En medio de cultivo V8, la colonia del hongo es de color marrón gris a negro.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternaria solani</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternaria solani</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa16 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa16">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf13"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Afecta especialmente a plantas de la familia Brassicaceae. En el Perú fue registrada afectando plantas de papa en el Valle del Mantaro a 3300 m de altitud. Se desarrolla a temperaturas entre 2 a 30°C.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternaria brassicae</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Alternaria brassicae</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa17 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa17">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf14"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este hongo afecta a las hojas y tallos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phoma andina</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phoma andina</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa18 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa18">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf15"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este hongo afecta tallos y hojas de papa.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Septoria lycopersici</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Septoria lycopersici</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa19 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa19">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf16"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las especies de este género contienen patógenos de plantas y agentes de deterioro de alimentos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ulocladium</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ulocladium</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa2">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf2"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por el patógeno Phytophthora erythroseptica. Al igual que P. infestans y todos los otros Oomycetes, no es considerado como hongo, sino que está· incluido en el Reino Chromista. La colonia del patógeno en medio de cultivo Papa Dextrosa Agar (PDA) tiene un desarrollo arrosetado de color blanquecino. El patógeno se desarrolla en un rango de temperaturas de 2.5 a 34°C, siendo el óptimo 27.5°C.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phytophthora erythroseptica</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phytophthora erythroseptica</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Chromista</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa20 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa20">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf17"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es una especie de hongo de la roya que infecta a cultivos agrícolas como la papa y el tomate.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puccinia pittieriana</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Puccinia pittieriana</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa21 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa21">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf18"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es una especie de hongo en el orden Pucciniales.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aecidium cantensis</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Aecidium cantensis</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa22 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa22">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf19"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Son como pequeños gusanos incoloros (translúcidos); se encuentran en los pelos radiculares de las raíces de la planta, su aparato bucal es en forma de un estilete, el cual introduce a las células y succiona la savia de la planta. El cuerpo de los nematodos hembra adquiere forma de un globo, mide de 0,5 a 1 milímetro y presenta color blanco que al madurar adquiere color marrón. Una hembra madura adquiere el nombre de quiste y en su interior contiene hasta 600 huevos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potato cyst nematodes</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Potato cyst nematodes</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nematodo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa23 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa23">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf20"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es un virus que se transmite por contacto y por insectos vectores.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus del moteado de la papa andina (APMV)</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus del moteado de la papa andina (APMV)</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa3 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa3">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por el hongo Rhizoctonia solani (fase asexual), Thanatephorus cucumeris (fase sexual). R. solani, pertenece a la Clase Hyphomycetes; es la fase patogénica y se caracteriza porque no produce conidias, las hifas son de color marrón oscuro, las células son multinucleadas y la base de la célula que da origen a una ramificación tiene una constricción. T. cucumeris pertenece a la Clase Basidiomycetes.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rhizoctonia solani</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rhizoctonia solani</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa4 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa4">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium alboatrum forma micelio de descanso, no forma microesclerocios, es más patogénico, fácil de controlar y está presente en lugares húmedos y fríos (16 a 27°C).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium alboatrum</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium alboatrum</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa5 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa5">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium dahliae forma microesclerocios, no forma micelio de descanso, es menos patogénico, difícil de controlar sobre todo cuando los microesclerocios se establecen en el suelo y está presente en suelos de lugares más cálidos (22 a 27°C).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium dahliae</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verticillium dahliae</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa6 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa6">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf5"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por el hongo Spongospora subterránea que se caracteriza porque forma soras, las cuales contienen esporangios de descanso. Las soras tienen forma ovoide, irregular o elongada y tienen la apariencia de una cadena por los esporangios de descanso que se encuentran agregados. Los esporangios de descanso son pequeños (3.5 a 4.5 µm de diámetro), de forma poliédrica con paredes lisas, delgadas y de color amarillo-marrón. Las zoosporas tienen dos flagelos de tamaño diferente, con los cuales se movilizan en presencia de una película de agua existente en el suelo hasta alcanzar al hospedante.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spongospora subterránea</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Spongospora subterránea</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa7 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa7">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf6"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La especie S. scabiei muestra cadenas de esporas en forma helicoidal. Por otro lado, se desarrolla en suelos ácidos (hasta en pH 4.5).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Streptomyces scabiei</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Streptomyces scabiei</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bacteria</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa8 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa8">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf6"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La especie S. acidiscabies muestra cadenas de esporas en forma flexuosa. Por otro lado, se desarrolla en suelos con pH 5.2 a 7.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Streptomyces acidiscabies</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Streptomyces acidiscabies</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bacteria</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#causa9 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#causa9">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#AgenteCausal"/>
+        <es_agente_causal_de rdf:resource="http://localhost:3030/ontopotato/data#inf7"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El hongo se caracteriza porque forma una bolsa que contiene esporas multicelulares (de 2 a 8 células) de color marrón oscuro, cuya superficie externa tiene una capa delgada ligeramente verrucosa. La masa de esporas que se encuentra en las cavidades loculares del tumor carbonoso es de color marrón oscuro y aspecto pulverulento. Esto es lo que se observa en forma de estrías cuando se cortan transversalmente los tumores carbonosos. El micelio del hongo tiene fíbulas, es grueso y toruloso.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angiosorus solani</Nombre>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angiosorus solani</NombreCientifico>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hongo</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf1">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa1"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint1"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint2"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint3"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El tizón tardío de la papa es la más devastadora enfermedad de plantas reportada en la historia de la humanidad. Está presente en todas las áreas paperas del mundo y es considerada como la más importante del cultivo de la papa, porque si los campos no están protegidos adecuadamente con aplicaciones planificadas de fungicidas y, por otra parte, las condiciones ambientales, son al mismo tiempo, óptimas para el desarrollo del patógeno (temperatura de 12 a 15°C y humedad relativa de 95 a 100%), los sembríos de papa pueden ser destruidos en 10 a 15 días. Esto es lo que ocurre en algunas zonas paperas del Perú y en otros países del mundo, donde las pérdidas pueden ser totales.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tizón tardío de la papa</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rancha</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf10 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf10">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa12"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint32"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad es causada por el hongo Colletotrichum. La enfermedad afecta, raíces, estolones, tallos y tubérculos. Las plantas afectadas muestran una ligera marchitez y clorosis que pueden ser confundidos con los síntomas causados por Verticillium.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Punteado negro</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Punteado negro</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf11 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf11">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa13"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint33"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint34"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad está presente en las zonas paperas frías de todos los países de la región andina.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición blanca</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición blanca</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf12 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf12">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa14"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint35"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint36"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad se presenta en las áreas paperas ubicadas en las zonas tropicales o subtropicales y en los valles interandinos del Perú donde la temperatura es alta.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición del tallo</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición del tallo</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf13 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf13">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa15"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa16"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint37"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint38"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint39"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El tizón temprano es después del tizón tardío, la enfermedad foliar más importante del cultivo de papa se presenta con mayor incidencia en las zonas paperas ubicadas en regiones húmedas y cálidas de países como India, Uruguay, Brasil y del Caribe. Las pérdidas se estiman entre 10 a 50% de los rendimientos. En el caso del Perú, la enfermedad no es importante, debido a que en las zonas paperas de la sierra, los agricultores utilizan variedades tardías que son resistentes, sin embargo, ocasionalmente se ha encontrado en la costa y en los valles interandinos cálidos. Además, en la sierra están presentes otras enfermedades foliares como el tizón andino y la mancha anular, que normalmente son confundidas con el tizón temprano por agricultores y técnicos nacionales e internacionales.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tizón temprano</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tizón temprano</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf14 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf14">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa17"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint40"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint41"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se presenta en la sierra del Perú, entre 2800 y 3500 m de altitud, donde las condiciones ambientales son relativamente secas, como es el caso del Valle del Mantaro. Esta enfermedad es constantemente confundida con el tizón temprano, pero se diferencia porque Phoma ataca especialmente variedades de papa tardías, mientras que Alternaria ataca papas precoces y porque haciendo un corte de la mancha se puede observar al microscopio las picnidias propias de Phoma.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mancha de la hoja por Phoma</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mancha de la hoja por Phoma</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf15 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf15">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa18"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint42"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad está presente en las áreas paperas frías y húmedas, localizadas entre 3500 y 4000 m de altitud, como la zona de Comas (Provincia de Concepción) o Huasahuasi (Provincia de Tarma), Perú. También ha sido reportada en Ecuador y en Venezuela. La enfermedad se puede diferenciar de otras enfermedades foliares, haciendo un corte de las manchas, donde con ayuda del microscopio compuesto se observarán las picnidias propias del género Septoria.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mancha de la hoja por Septoria</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mancha de la hoja por Septoria</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf16 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf16">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa19"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint43"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esta enfermedad está localizada en la zona del altiplano, Dpto. de Puno. De acuerdo con los agricultores de esa zona, la enfermedad se presenta después de una granizada.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kasahui</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kasahui</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf17 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf17">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa20"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint44"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esta enfermedad se encuentra presente a una altitud entre 3000 a 3800 m, en los valles ubicados en las partes altas de países como Colombia, Ecuador, México, Perú y Venezuela. La enfermedad tiene importancia económica sólo en Ecuador, en la zona papera de Ambato. En el Perú no es muy importante y se le encuentra entre 2700 y 3800 m de altitud.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roya Común</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roya Común</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf18 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf18">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa21"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint45"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esta enfermedad ha sido reportada en el Perú por Arthur en 1929 y se le encuentra entre 2400 a 3200 m de altitud. La enfermedad no ha sido muy bien estudiada, pero aparentemente no ocasiona pérdidas económicas.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roya peruana</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roya deformante</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf19 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf19">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa22"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint46"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El nematodo quiste de la papa es el más importante porque se encuentra en muchas zonas productoras de papa en la sierra del Perú. Las plantas afectadas por esta enfermedad son de menor porte y vigor, y producen menor número tubérculos de menor tamaño. Los síntomas que presentan las plantas afectadas son similares a los producidos por deficiencia de agua o nutrientes.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nematodo quiste de la papa</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Quiste de la papa</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf2">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa2"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint4"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint5"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint6"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad fue reportada por primera vez en Irlanda por Pethybridge en 1913 y en el Perú por Torres en 1970. En la actualidad se presenta en la mayoría de las zonas paperas del mundo, donde los suelos son húmedos y tienen mal drenaje y como consecuencia, hay acumulación de agua ocasionada por las lluvias o por riego excesivo.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición rosada</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición rosada</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf20 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf20">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa23"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint47"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint48"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es una enfermedad viral frecuente en las zonas productoras de papa del altiplano de Perú, Bolivia y Argentina. Además, causan enfermedades de importancia económica porque reducen el rendimiento y afecten la calidad, son de amplia distribución, de rápida diseminación y son difíciles de controlar.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus moteado andino</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Virus moteado andino</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf21 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf21">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint49"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint50"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El gorgojo de los Andes es considerado como plaga clave para el cultivo de la papa. Esta plaga tiene una sola generación al año y durante su vida pasa por 4 estados de desarrollo: Huevo, larva, pupa y adulto. Los adultos son de color marrón claro a oscuro y miden de 6 a 8 mm, no vuelan y se trasladan caminando. Los huevos son de color blanco a crema y miden hasta 1 mm de tamaño. Las larvas son de color crema claro y la cabeza de color marrón, mide hasta 8 mm. Las pupas son de color blanco crema y pueden medir hasta 6 mm.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Premnotrypes</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gorgojo de los Andes</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf22 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf22">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint51"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">50</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La polilla de la papa en la zona andina es importante solo a nivel del almacén, en campo se comporta como plaga sin importancia económica. Las especies que se encuentran a nivel de los valles interandinos de sierra (Huancavelica) son: Phthorimaea operculella y Synmetrischema tangolias, ambas de la familia Gelechiidea orden Lepidoptera.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phthorimaea operculella y Synmetrischema tangolias</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Polilla de la papa</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf23 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf23">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint52"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint53"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Es un insecto de tamaño pequeño (1-2 mm) con cuerpo negro o marrón oscuro brillante cuyas patas traseras les permiten dar saltos como las pulgas domésticas.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Epitrix</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulguilla saltona</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf24 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf24">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint54"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se conoce como araña roja, ya que su forma asemeja a arañas diminutas de color rojo. Se sitúan en el envés de las hojas principalmente y se alimentan del contenido de estas, que adquieren un aspecto plateado y posteriormente bronceado. Las condiciones que favorecen el desarrollo de estas plagas son tiempo seco y caluroso.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tetranychus urticae</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Araña roja</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf25 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf25">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint55"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este es un insecto que se alimenta y reproduce en muchas plantas, incluyendo la papa. En su estado adulto es una pequeña mosca que se le encuentra reposando sobre las hojas. Además, es oriunda de Sudamérica y común en áreas donde hay un uso intensivo de insecticidas.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Liriomyza huidobrensis</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mosca minadora</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf26 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf26">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint56"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esta especie de áfidos se hallan ampliamente distribuidos en las tres regiones del Perú, aunque predominan en la Costa donde se le considera plaga clave de la papa por sus daños directos e indirectos como vectores de virus. Estos insectos son pequeños, de cuerpo globoso, blando, que representan un polimorfismo bien marcado, hay formas ápteras y formas aladas.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Myzus persicae</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pulgones de la papa</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf27 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf27">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint57"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Estos insectos en su etapa adulta son pequeñas cigarritas de color verde, de 2.4 a 3 mm de longitud por 0.75 mm de ancho. Tienen la forma peculiar de cuña, la cabeza corresponde ala parte más gruesa. Las patas posteriores son largas; los huevos son alargados y ligeramente curvados. Se ubican preferentemente en la parte inferior de las hojas, en la parte inferior de las hojas, especialmente en la primera mitad de la planta, desde la germinación hasta la floración. Los ataques de estos insectos comienzan por los bordes del cultivo, y su intensidad es mayor si el clima es cálido y seco.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Empoasca</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loritos verdes</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf28 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf28">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint58"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se han registrado la presencia de las especies Frankliniella tuberosi y Thrips tabaci en las plantas de papa en la región andina. Los adultos de F. tuberosi son pequeños y alargados de 1 mm de longitud, de color oscuro brillante; presentan dos pares de alas muy peculiares de forma casi puntiaguda. Las ninfas son más pequeñas y sin alas, presentan cinco etapas de desarrollo; en las dos primeras son muy activas, en la tercera etapa aparecen los muñones alares, en la cuarta etapa la ninfa se moviliza poco y se torna estacionaria.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Frankliniella tuberosi y Thrips tabaci</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trips negro</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf29 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf29">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint59"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este insecto solo ataca a los cultivos de papa y su distribución está limitada a la región andina. Las larvas miden de 20 a 25 mm de largo por 3 a 4 mm de ancho; en su último estado son de color pardo y presentan en el cuerpo pequeños tubérculos oscuros, circulares y brillantes provistos de pelos largos y finos y hialinos. La cabeza es de color marrón claro; poseen tres pares de patas torácicas y cuatro pares abdominales. La hembra oviposita cerca de las yemas axilares. Luego de cumplido el periodo de incubación, emergen las larvitas y se introducen dentro del tallo. El ciclo dura un año.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Terastia meticulosalis</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gusano barrenador de tallo</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf3 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf3">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa3"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint10"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint11"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint12"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint7"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint8"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint9"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La rizoctoniasis conocida también con los nombres de costra negra (por la presencia de esclerocios en la superficie de los tubérculos afectados) y cancro del tallo (por las lesiones necróticas en los tallos), es una enfermedad que está presente en todas las zonas productoras de papa del mundo. La enfermedad afecta la calidad culinaria y sanitaria de los tubérculos, pero en relación con las pérdidas en los rendimientos, en la literatura existen reportes contradictorios. Algunos dicen que la enfermedad afecta los rendimientos, otros dicen que no.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rizoctoniasis</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Costra negra</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf30 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf30">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint60"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La especie de este insecto es considerada como plaga importante en el cultivo de papa en la región de la Costa. Los adultos son pequeñas polillas de a 5 mm de longitud, de color gris claros con algunas manchas gris oscuras en la mitad posterior del ala y el resto del cuerpo, mientras que la superficie ventral del abdomen es gris-plateada. Además, los adultos son de hábitos nocturnos. En el día se les halla escondidos en el suelo y en el follaje, ovipositan en grupos en el haz de las hojas y en menor cantidad en los brotes. Al cabo de 5 a 11 días emergen las larvas, las cuales pasan por cuatro estados en un periodo de 14 a 25 días. Estas larvas penetran en las hojas y allí permanecen durante todo el periodo larval, luego empupan dentro de un cocón sobre la hoja u otro órgano de la planta o en el suelo. Después de 8 a 20 días, emerge el adulto.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Scrobipalpula absoluta</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oruga minadora de hojas y tallo</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf31 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf31">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint61"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint62"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los gusanos de tierra dañan las plantas tiernas de papa y otros cultivos. Son polífagos, presentan un amplio rango de plantas hospederas y atacan plantas silvestres y cultivadas. Los adultos son nocturnos, ovipositan en las hojas o en la zona cercana al cuello de la planta, de acuerdo con los hábitos de la especie. Las larvas se ocultan en la tierra alrededor de las plantas durante el día, pero al atardecer se activan y cortan el cuello de las plantas tiernas y empupan en el suelo de donde emerge el adulto.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Copitarsia turbata</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gusano cortador de tierra</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf32 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf32">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint63"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El término “gusanos blancos” agrupa a varias especies de diferentes géneros: Bothynus maimon y Phyllophaga. Los adultos de B. maimon son escarabajos de color negro brillante de 2 a 3 cm de longitud, cilíndricos con cabeza pequeña, protórax relativamente grande convexo y con bordes redondeados. Los adultos vuelan de noche y son atraídos por la luz.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bothynus maimon y Phyllophaga</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gusano blanco</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf33 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf33">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint64"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"></AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las larvas de esta especie llegan a medir 3 cm de largo, de cuerpo cilíndrico, delgado claramente segmentado y quitinizado, la coloración varía de amarillo pálido a marrón oscuro. Las pupas son de color blanco y de 2 cm de largo. El adulto es un escarabajo de color amarillo, café claro, gris o negro.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ludius</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gusano alambre</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Plaga</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf4 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf4">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa4"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa5"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint13"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint14"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint15"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint16"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint17"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint18"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint19"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#float">46.0</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad está presente en todas las zonas productoras de papa del mundo, pero tiene mayor incidencia en las zonas desérticas como es el caso de Israel y/o en campos de cultivo con humedad deficiente. En el Perú, la enfermedad se encuentra distribuida en una diversidad de suelos y climas, desde el nivel del mar hasta los 4000 m de altitud. La incidencia en algunos casos llega hasta un 60% y en otros hasta un 70%. Además, según Malamud, la enfermedad ocasiona pérdidas en los rendimientos entre 25 y 46%.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marchitez por Verticillium</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marchitez por Verticillium</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf5 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf5">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa6"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint20"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint21"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint22"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">97.5</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La roña es una enfermedad que afecta la calidad de los tubérculos, pero no los rendimientos. En variedades susceptibles puede afectar hasta un 97.5% de los tubérculos con una severidad (porcentaje de la superficie del tubérculo cubierta con pústulas) de 81 a 95%. Además, la enfermedad es muy importante porque el hongo Spongospora subterránea es vector del virus mop top de la papa (PMTV). El hongo está presente en las áreas de cultivo de papa localizadas en las partes frías y húmedas de los hemisferios norte y sur, entre las latitudes 65° Norte y 53° Sur. También existe en las partes altas de la zona tropical, en los países de la región andina en América del Sur y Costa Rica en América Central. En el Perú, la enfermedad fue reportada por Abbott (1928); está localizada sólo en la sierra y los daños con mayor incidencia se presentan en los cultivos de papa ubicados entre 3200 y 3800 m de altitud.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roña</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Roña</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf6 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf6">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa7"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa8"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint23"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint24"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint25"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La sarna común está presente en la mayoría de las zonas paperas más importantes del mundo. La sarna reduce la calidad comercial de los tubérculos que se utilizan en procesamiento y la calidad sanitaria cuando son usados como semilla. La sarna está considerada por los agricultores como la cuarta enfermedad más importante en EUA. En algunos campos de cultivo de países como Chile, los tubérculos afectados llegan al 80%, pero no se producen pérdidas en el rendimiento. En el Perú, la enfermedad no ha sido reportada.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarna común</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sarna</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf7 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf7">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa9"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint26"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint27"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">85</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El carbón fue observado por primera vez en 1939 en la zona papera de Mucuchies, Venezuela y lo reportaron como Andean Disease (enfermedad andina). La enfermedad está actualmente presente en Chile, Panamá·, México y en los países de la Región Andina (Bolivia, Perú, Ecuador, Colombia y Venezuela). El carbón de la papa es una enfermedad muy importante porque afecta hasta un 85% de los rendimientos.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carbón</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Carbón</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf8 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf8">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa10"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint28"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La verruga se encuentra presente en las zonas de cultivo de papa de algunos países de Norte y Sudamérica (Región Andina), y en algunos países de África, Europa y Asia. En los campos de papa en Bolivia, las pérdidas alcanzan hasta 20%, pero si está asociado con el falso nematodo del nudo, las pérdidas pueden ser mayores. En la sierra del Perú, la mayoría de los campos ubicados entre 3500 y 3800 m de altitud están infestados por el hongo y los agricultores de estos lugares conviven con la enfermedad. Las pérdidas de rendimiento se estiman entre 0 y 20%.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Verruga</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ancatu</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#inf9 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#inf9">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Infeccion"/>
+        <tiene_agente_causal rdf:resource="http://localhost:3030/ontopotato/data#causa11"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint29"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint30"/>
+        <tiene_sintoma rdf:resource="http://localhost:3030/ontopotato/data#sint31"/>
+        <AfectaUnPorcentajeDeHasta rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">100</AfectaUnPorcentajeDeHasta>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad está presente en las zonas paperas de los 5 continentes, ubicadas en ambientes de clima cálido, húmedo y en suelos con bastante materia orgánica. En el Perú, la enfermedad está presente en los campos de cultivo ubicados en la vertiente oriental de los Andes, entre 2700m y 3300m de altitud. La enfermedad es muy importante porque ocasiona pérdidas que oscilan entre 20 y 80% de los rendimientos, pero, si el agricultor practica el monocultivo y siembra en campos de cultivo infestados, al tercer o cuarto año las pérdidas pueden alcanzar el 100%.</Descripcion>
+        <NombreCientifico rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pudrición Negra por Rosellinia</NombreCientifico>
+        <NombreComun rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sogope</NombreComun>
+        <Tipo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Enfermedad</Tipo>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint1 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint1">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf1"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad se inicia mostrando pequeñas manchas irregulares de color verde pálido a verde oscuro. En condiciones ambientales óptimas de temperatura (12 a 15°C) y humedad relativa (100%), estas pequeñas manchas irregulares que se desarrollan generalmente en los bordes y en el ápice de los foliolos crecen rápidamente, dando lugar a lesiones necróticas grandes de color marrón a negro, rodeadas de un halo amarillento.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En hojas</Nombre>
+        <rdfs:comment>lesiones necrófitas grandes de color marrón a negro, rodeadas de un halo amarillento</rdfs:comment>
+        <rdfs:comment>manchas irregulares que se desarrollan en los bordes y en el ápice de los foliolos</rdfs:comment>
+        <rdfs:comment>pequeñas manchas irregulares de color verde pálido a verde oscuro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint10 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint10">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Durante el desarrollo de las plantas en suelos infestados, se puede observar la presencia de una capa miceliana de color blanco grisáceo en la base de los tallos, desde el nivel del suelo hacia arriba en una longitud aproximada de 10 cm. En esta capa se encuentran las estructuras que corresponden a la fase sexual del hongo, la misma que no produce ningún daño a la planta, ya que, al frotarse con la yema de los dedos, el tejido del tallo que estuvo cubierto con esta capa se muestra completamente sano.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la base del tallo</Nombre>
+        <rdfs:comment>una capa miceliana de color blanco grisáceo en la base de tallos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint11 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint11">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la superficie de los tubérculos afectados se observa la presencia de costras negras, llamadas esclerocios que son las estructuras de conservación del hongo. Las costras negras les dan un mal aspecto a los tubérculos y para evitar este problema, los agricultores lavan los tubérculos y extraen los esclerocios antes de llevar su producto al mercado. Por otra parte, las costras negras restan la calidad sanitaria de los tubérculos cuando son comercializados como semilla.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>costras negras que le dan un mal aspecto al tubérculo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint12 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint12">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad afecta a plántulas procedentes de semilla botánica en el estado de pre y postemergencia. Cuando las plántulas de papa que han desarrollado en bandejas o en camas de almácigos son trasplantadas al campo, son severamente afectadas por un complejo de patógenos, entre los cuales se encuentra Rhizoctonia. La muerte de plántulas trasplantadas puede llegar en algunos casos hasta un 70%.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En plántulas</Nombre>
+        <rdfs:comment>un complejo de patógenos, luego de haber sido trasplantadas de las bandejas de almácigos al campo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint13 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint13">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En condiciones de campo, la marchitez es más conspicua en los días de sol o en periodos de sequía, sin embargo, la incidencia depende también de la precocidad de las variedades de papa, nivel de infestación del suelo e interacción de Verticillium con otros patógenos. Bajo condiciones controladas (en invernadero), las plantas que desarrollaron en suelos infestados mostraron marchitez a partir de los 40 días después de la siembra. La marchitez se presentó en forma unilateral con una clorosis y/o amarillamiento de las hojas del tercio inferior de la planta.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Marchitez</Nombre>
+        <rdfs:comment>marchitez notable en los días de sol o sequia</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint14 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint14">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algunas variedades y/o clones, muestran síntomas de amarillamiento que se inicia en las hojas del tercio inferior. En campos de cultivo afectados, se observan plantas sanas de un color verde normal, mientras que las plantas enfermas parecen cercanas a la senescencia natural. El amarillamiento unilateral de las hojas se muestra sólo en plantas afectadas de algunos clones.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Amarillamiento</Nombre>
+        <rdfs:comment>amarillamiento que se inicia en las hojas del tercio inferior</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint15 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint15">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas de variedades precoces mueren sin haber alcanzado su madurez fisiológica. En plantas inoculadas en el invernadero, la muerte ocurre entre 10 y 30 días antes de la senescencia natural, mientras que en las plantas de variedades tardías la muerte coincide con la senescencia natural.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Muerte temprana</Nombre>
+        <rdfs:comment>muerte sin haber alcanzado su madurez fisiológica</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint16 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint16">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tallos de las plantas muertas se vuelven negros por la formación de micelio de descanso que caracteriza a la especie Verticillium alboatrum; y/o de color grisáceo, por la formación de microesclerocios propios de la especie V. dahliae. Los microesclerocios observados al microscopio, se muestran como puntos de color negro localizados en las porciones de tejido de los tallos muertos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ennegrecimiento de tallos muertos</Nombre>
+        <rdfs:comment>tallos negros en las plantas muertas o de color grisáceo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint17 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint17">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los haces vasculares de los tallos afectados muestran un color marrón oscuro, en cambio, el anillo vascular de los tubérculos muestra un color amarillo intenso. Sin embargo, estos síntomas también pueden ser causados por otros patógenos como Fusarium solani f.sp. eumartii, pero en este último caso, los tubérculos afectados muestran el anillo vascular más ancho.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decoloración de los haces vasculares</Nombre>
+        <rdfs:comment>un color amarillo intenso en el anillo vascular de los tubérculos</rdfs:comment>
+        <rdfs:comment>un color marrón oscuro en los haces vasculares de los tallos afectados</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint18 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint18">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas afectadas producen tubérculos pequeños y esto ocurre como consecuencia de la muerte temprana de las plantas. Las pérdidas que se producen en el campo están relacionadas con el peso de los tubérculos, pero no por el número de éstos; por esta razón algunos agricultores no se dan cuenta de las pérdidas que ocasiona la enfermedad.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tubérculos medianos o pequeños</Nombre>
+        <rdfs:comment>producción de tubérculos pequeños debido a la muerte temprana de las plantas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint19 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint19">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf4"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este síntoma es producido por la especie V. nubilum. Los brotes afectados se muestran encorvados y algo retorcidos en la porción de tallo que se une con el tubérculo semilla.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brotes encorvados</Nombre>
+        <rdfs:comment>brotes encorvados y algo torcidos en la porción de tallo que se une con el tubérculo semilla</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint2 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint2">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf1"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los síntomas se presentan como lesiones oscuras continuas, ubicadas generalmente en el tercio medio o superior de la planta y alcanzan en algunos casos, más de 10 cm de longitud. Estas lesiones son frágiles y de consistencia vidriosa, se quiebran fácilmente con la fuerza del viento o por contacto con la maquinaria (tractor) o las personas que transitan por el campo durante las labores culturales.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tallos</Nombre>
+        <rdfs:comment>lesiones frágiles y de consistencia vidriosa</rdfs:comment>
+        <rdfs:comment>lesiones oscuras continuas ubicadas en el tercio medio o superior de la planta</rdfs:comment>
+        <rdfs:comment>quiebres fáciles debido a la fuerza del viento o el contacto con maquinaria o personas que transitan por el campo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint20 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint20">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf5"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las raíces de las plantas enfermas muestran agallas o tumores lisos, de 0.5 a 1.5 cm de tamaño y de forma más o menos irregular; al inicio los tumores son de color blanquecino y cuando alcanzan la madurez fisiológica se vuelven oscuros, debido al color marrón de las paredes de los esporangios de descanso.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En raíces</Nombre>
+        <rdfs:comment>en madurez fisiológica, agallas o tumores oscuro o marrón</rdfs:comment>
+        <rdfs:comment>inicialmente agallas o tumores lisos de forma irregular de color blanquecino</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint21 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint21">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf5"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La infección de los estolones ocurre paralelamente a la infección de las raíces y los síntomas son similares a los de las raíces, pero las agallas son más pequeñas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En estolones</Nombre>
+        <rdfs:comment>infección en los estolones, de igual forma en las raíces</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint22 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint22">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf5"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tubérculos enfermos muestran pústulas que son inicialmente lisas, de color blanquecino y de 2 a 3 mm de diámetro. Las pústulas continúan desarrollándose hasta alcanzar aproximadamente 1 cm de diámetro y cuando esto ocurre se vuelven oscuras.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>pústulas hasta de 1cm de diámetro oscuras</rdfs:comment>
+        <rdfs:comment>pústutas lisas, de color blanquecino y de 2 a 3 mm de diámetro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint23 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint23">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf6"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Son lesiones levantadas de forma circular, aspecto corchoso, color marrón y entre 5-10 mm de diámetro en la superficie de los tubérculos. Las pústulas pueden unirse y formar superficies afectadas más grandes.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pústulas</Nombre>
+        <rdfs:comment>lesiones de forma circular, aspecto cochoso, color marrón y entre 5-10mm de diámetro en la superficie de los tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint24 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint24">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf6"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Son lesiones en forma de cavidades semiprofundas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesiones hundidas</Nombre>
+        <rdfs:comment>lesiones en forma de cavidades semiprofundas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint25 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint25">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf6"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Son lesiones en forma de figuras poliédricas y/o lesiones necróticas de forma reticular o estrellada.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesiones necróticas</Nombre>
+        <rdfs:comment>lesiones de forma de figuras poliédricas</rdfs:comment>
+        <rdfs:comment>lesiones necrófitas de forma reticular o estrellada</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint26 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint26">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf7"/>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tallos</Nombre>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tumores carbonosos están localizados en la parte inferior de los tallos que se encuentran en contacto con el suelo y son más grandes que aquellos que se desarrollan en estolones y tubérculos. Inicialmente se forman pequeñas protuberancias de aproximadamente 2 mm de diámetro sobre la superficie del tallo. Si el suelo está muy infestado y la infección se produce en el primer estado de desarrollo de una planta susceptible, los tumores carbonosos pueden alcanzar más de 10 cm de diámetro.</Nombre>
+        <rdfs:comment>pequeñas protuberancias de aproxamidamente 2mm de diámetro sobre la superficie del tallo</rdfs:comment>
+        <rdfs:comment>tumores en la parte inferior de los tallos en contacto con el suelo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint27 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint27">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf7"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los síntomas en tubérculos se presentan en dos formas. Primero, se puede presentar en forma de tumores carbonosos que cubren una buena porción de la superficie de los tubérculos o que se muestran como crecimientos secundarios unidos parcialmente a los tubérculos.  Segundo, también se puede presentar en forma de pequeños sobrecrecimientos o tumores que se desarrollan en la superficie de los tubérculos, aparentemente se presentan en algunas variedades más que en otras.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>pequeños sobrecrecimientos o tumores en la superficie de los tubérculos</rdfs:comment>
+        <rdfs:comment>tumores carbonosos que cubren una buena porción de la superficie de los tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint28 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint28">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf8"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas afectadas muestran tumores que desarrollan en los puntos de crecimiento de tejidos de tallos, estolones y tubérculos. Los tumores son el resultado de células de tejidos infectados que tienen un tamaño más grande que el normal (hipertrofia) y las células vecinas que se multiplican aceleradamente (hiperplasia).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la parte superior de los tallos, en las hojas y en las flores</Nombre>
+        <rdfs:comment>tumores en los puntos de crecimiento de tejidos de tallos, estolones y tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint29 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint29">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf9"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas afectadas se quedan pequeñas, muestran clorosis en las hojas del tercio inferior y necrosis en el cuello de la raíz. Muestran, además, marchitez que avanza de abajo hacia arriba hasta una marchitez total. El micelio del hongo causa pudrición de raíces y cubre parcial o totalmente a las raíces y a los tallos de las plantas afectadas, ocasionando la no tuberización.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En plantas</Nombre>
+        <rdfs:comment>clorosis en las hojas del tercio inferior y necrosis en el cuello de la raíz</rdfs:comment>
+        <rdfs:comment>marchitez que avanza de abajo hacia arriba</rdfs:comment>
+        <rdfs:comment>pudrición de raíces y cubre parcial o totalmente a las raíces y a los tallos de las plantas afectadas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint3 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint3">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf1"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la parte externa de los tubérculos infectados se observan depresiones muy superficiales e irregulares, de tamaño variable y de consistencia dura. Al hacer un ligero raspado (con un cuchillo o con la uña), debajo de la piel afectada el tejido es de color marrón. Cortando transversalmente un tubérculo afectado, se observa en la superficie de corte una necrosis de forma irregular, de color marrón, de apariencia granular que avanza de la periferia hacia el centro de la médula. En los tubérculos afectados que aparentemente se muestran sanos al momento del almacenamiento, la enfermedad desarrolla lentamente y el patógeno esporula, sin embargo, los tubérculos infectados pueden destruirse completamente, debido a que las lesiones son puerta de entrada de bacterias patógenas como Erwinia y hongos como Fusarium que se encuentran en la superficie de los tubérculos y causan pudrición.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>debajo de la piel afectada el tejido es de color marrón cuando se realiza un pequeño raspado</rdfs:comment>
+        <rdfs:comment>en la parte externa del túberculo, depresions muy superficiales e irregulares</rdfs:comment>
+        <rdfs:comment>lesiones superficiales que causan pudrición</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint30 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint30">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf9"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuando se siembran tubérculos sanos en suelos fuertemente infestados y húmedos, estos se recubren de un crecimiento miceliano de color blanco que les causa pudrición y muerte de brotes. En el momento de la cosecha, los tubérculos afectados presentan pudrición y un desarrollo miceliano que los recubre total o parcialmente. Los tubérculos con pudrición tienen consistencia blanda en suelos húmedos y dura en estaciones secas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>pudrición y muerte de brotes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint31 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint31">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf9"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El micelio blanquecino que cubre la superficie de tallos y tubérculos, toma un color plomizo y forma synemas (estructuras en forma de plumero) y esclerocios. Los esclerocios tienen 0.5 a 1.5 mm de diámetro, son de color negro, de forma más o menos redondeada y se les encuentran debajo de la capa miceliana que cubre a los tejidos afectados. Los esclerocios que se forman en la superficie de los tubérculos enfermos que se dejan enterrados en el campo, se mantienen viables de una campaña a otra.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tallos y en tubérculos</Nombre>
+        <rdfs:comment>una cobertura de los tallos y tubérculos de un color plomizo y forma de synema esclerocio</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint32 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint32">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf10"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El síntoma típico es la presencia de puntos negros en estolones, raíces y base de los tallos hasta los 10 cm sobre la línea del suelo. Los puntos negros corresponden a los acérvulos, que son estructuras que contienen masas de conidias protegidas por una especie de cerdas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En estolones, raíces y base de los tallos</Nombre>
+        <rdfs:comment>puntos negros en los estolones, raíces y en la base de los tallos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint33 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint33">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf11"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Esto ocurre porque los esclerocios del hongo que se encuentran en el suelo geminan produciendo micelio, el cual invade la zona del cuello, ocasionando lesiones húmedas, hundidas, cubiertas de micelio y esclerocios y como consecuencia, los tallos se tumban. Este tipo de síntoma se presenta cuando se siembra papa en suelos infestados y húmedos. Ocasionalmente se ha determinado hasta un 44% de plantas afectadas en la costa del Perú.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el cuello de la raíz</Nombre>
+        <rdfs:comment>lesiones húmedas, hundidas, cubiertas de micelio y esclerocios</rdfs:comment>
+        <rdfs:comment>tallos tumbados</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint34 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint34">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf11"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los síntomas se presentan en las porciones de tejido del tercio inferior, medio y superior de los tallos. Los síntomas se inician en las axilas de las hojas, debido a que los esclerocios al geminar forman estructuras sexuales conocidas como apotecios. Un esclerocio puede dar lugar a 2 o 3 apotecios.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tallos</Nombre>
+        <rdfs:comment>síntomas en las porciones de tejido del tercio inferior, medio y superior de los tallos</rdfs:comment>
+        <rdfs:comment>síntomas se inician en las axilas de las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint35 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint35">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf12"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el tejido afectado del tallo se observa el desarrollo del micelio del hongo en forma radial, el cual produce unos esclerocios esféricos, al comienzo de color blanco y después marrón claro, del tamaño de las semillas de mostaza.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la base del tallo</Nombre>
+        <rdfs:comment>desarrollo de esclerocios esféricos de color blanco o marrón claro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint36 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint36">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf12"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tubérculos que se encuentran muy cerca de la superficie del suelo se infectan y como en los tallos, el micelio del hongo se desarrolla sobre el tubérculo, en forma radial causando pudrición.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>cambios en el tallo, el micelio en forma radial que se pudre</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint37 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint37">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf13"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manchas necróticas de 1 a 2 mm de diámetro que se presentan en las hojas basales a partir de los 45 días después de la siembra. A medida que desarrolla la enfermedad, las manchas se rodean de un halo clorítico y forman lesiones necróticas con anillos concéntricos de color marrón claro en toda el área foliar. La mancha puede llegar a medir aproximadamente hasta 2 cm de diámetro, pero su crecimiento está restringido por las nervaduras de los foliolos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Manchas foliares</Nombre>
+        <rdfs:comment>machas necrófitas de 1 a 2 mm de diámeto en las hojas basales a partir de los 45 días luego de la siembra</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint38 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint38">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf13"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tallos afectados muestran lesiones necróticas de 0.5 a 1.5 cm de diámetro observables con mayor claridad en los cultivares susceptibles.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesiones necróticas en tallos</Nombre>
+        <rdfs:comment>lesiones necrófitas de 0.5 a 1.5cm de diámetro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint39 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint39">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf13"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este síntoma ha sido reportado en el Estado de Colorado en USA. Los tubérculos afectados muestran lesiones ligeramente hundidas, circulares o de forma irregular. Estas lesiones son oscuras con bordes de un tenue color morado que pueden incrementarse en condiciones de almacén.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lesiones necróticas en tubérculos</Nombre>
+        <rdfs:comment>lesiones ligeramente hundidas, circulares o de forma irregular</rdfs:comment>
+        <rdfs:comment>lesiones oscuras con bordes de un tenue color morado</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint4 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint4">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf2"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tubérculos usados como semilla, no emergen cuando se siembran en suelos infestados. En igual forma, los tubérculos semilla aparentemente sanos desarrollan en condiciones favorables de humedad en el suelo, pero los brotes mueren, hay desarrollo escaso de raíces y pudrición del tubérculo madre, ocasionando fallas en el campo.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En plantas</Nombre>
+        <rdfs:comment>brots del tubérculo semilla que mueren</rdfs:comment>
+        <rdfs:comment>desarrollo escaso de raíces</rdfs:comment>
+        <rdfs:comment>pudrición del tubérculo madre</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint40 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint40">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf14"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los síntomas en las hojas son manchas irregulares, de color marrón oscuro, de 0.5 cm (2.5 mm a 1 cm) de diámetro. Si las condiciones son favorables para el hongo, la severidad puede ocasionar defoliación.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En hojas</Nombre>
+        <rdfs:comment>manchas irregulares, de color marrón oscuro, de 0.5 cm (2.5 mm a 1 cm) de diámetro en las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint41 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint41">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf14"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Se presentan estrías necróticas de aproximadamente 1cm de longitud.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tallos y peciolos</Nombre>
+        <rdfs:comment>estrías necróticas de aproximadamente 1cm de longitud</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint42 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint42">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf15"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las hojas enfermas muestran manchas oscuras, de forma oval o redondeada, con anillos concéntricos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En hojas</Nombre>
+        <rdfs:comment>manchas oscuras, de forma oval o redondeada, con anillos concéntricos en las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint43 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint43">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf16"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad no ha sido estudiada detalladamente, sin embargo, aparentemente, los daños físicos que ocasionan las bolitas de granizo permiten el ingreso y desarrollo del hongo.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los cultivos</Nombre>
+        <rdfs:comment>bolitas de granizo y posible presencia de hongos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint44 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint44">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf17"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad se caracteriza porque en el haz de los foliolos, se presentan hendiduras más o menos cloróticas y en el envés, unas pústulas de color marrón rojizo de aproximadamente 3 a 5 mm de diámetro.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los foliolos</Nombre>
+        <rdfs:comment>hendiduras más o menos cloróticas</rdfs:comment>
+        <rdfs:comment>unas pústulas de color marrón rojizo de aproximadamente 3 a 5 mm de diámetro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint45 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint45">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf18"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las plantas afectadas muestran deformaciones en tallos, hojas, peciolos y ocasionalmente flores. Los tejidos afectados muestran inicialmente color amarillo y después se vuelven marrón rojizos y finalmente negros. Sobre el tejido infectado de color amarillo se observan las aecias que contienen las aeciosporas, las mismas que vienen a ser las estructuras de propagación de la roya.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En plantas</Nombre>
+        <rdfs:comment>deformaciones en tallos, hojas, peciolos y ocasionalmente flores</rdfs:comment>
+        <rdfs:comment>un tejido color amarillo, marrón rojizos o negro</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint46 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint46">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf19"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las larvas del nematodo quiste causan lesiones en las raíces y estolones lo que favorece el ingreso y desarrollo de bacterias y hongos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En raíces y estolones</Nombre>
+        <rdfs:comment>lesiones en las raíces y estolones</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint47 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint47">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf20"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las enfermedades causadas por virus producen diferentes síntomas en la planta (amarillamiento, mosaicos, enanismo, encrespamiento).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la planta</Nombre>
+        <rdfs:comment>amarillamiento, mosaicos, enanismo, encrespamiento</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint48 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint48">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf20"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los síntomas en tubérculos causados por virus son deformación y muerte de células tanto en la piel como en los tejidos internos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tubérculos</Nombre>
+        <rdfs:comment>deformaciones y muerte de celulas en la piel y en los tejidos internos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint49 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint49">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf21"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El gorgojo en su estado de larva perfora en forma de galerías dentro del tubérculo. Este estadio del gorgojo es el más nocivo, ya que puede alcanzar una pérdida del 80 - 100% de la producción.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el tubérculo</Nombre>
+        <rdfs:comment>perforaciones dentro del tubérculo</rdfs:comment>
+        <rdfs:comment>perforaciones en forma de galería dentro del tubérculo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint5 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint5">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf2"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tallos infectados muestran necrosis vascular y en algunos casos, en la parte inferior del tallo (cerca al cuello de la raíz), necrosis de un tenue color oscuro, síntoma similar a la enfermedad conocida como pierna negra, causada por Erwinia.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tallos</Nombre>
+        <rdfs:comment>necrosis de un tenue color ocuro en la parte inferior del tallo (cerca al cuello de la raíz)</rdfs:comment>
+        <rdfs:comment>necrosis vascular en los tallos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint50 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint50">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf21"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">El gorgojo en su estado de adulto se alimenta del follaje cortando por los bordes de las hojas en forma de semiluna.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el follaje</Nombre>
+        <rdfs:comment>cortes en forma de semiluna en el borde de la hoja</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint51 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint51">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf22"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La polilla en su estado de larva daña los tubérculos excavando galerías y llenado de excremento en los mismo, además puede perforar los brotes.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el tubérculo</Nombre>
+        <rdfs:comment>perforaciones y excremento en los tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint52 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint52">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf23"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este insecto en su fase adulta se alimenta de hojas a las cuales les causan perforaciones pequeñas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En las hojas</Nombre>
+        <rdfs:comment>perforaciones pequeñas en las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint53 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint53">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf23"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este insecto en su fase larva se alimenta de tallos subterráneos, raíces y estolones de la planta. Además, minan (raspan) la superficie del tubérculo afectando su calidad comercial.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la planta</Nombre>
+        <rdfs:comment>daños en la planta y superficie del tubérculo</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint54 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint54">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf24"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En caso de ataques fuertes, la planta decae, se vuelve amarillenta, se marchita y acaba muriendo de forma prematura. En estos ataques severos es frecuente observar pequeñas telas de araña que cubren la planta.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la planta</Nombre>
+        <rdfs:comment>amarillamiento y marchitez de la planta</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint55 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint55">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf25"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los daños al follaje se producen producto de las galerías que las larvas de estos insectos construyen dentro de las hojas al alimentarse, afectando las funciones básicas de éstas.  Si este daño se genera en un momento del cultivo cuando la planta se encuentra en formación tubérculos, puede desencadenar una severa pérdida de hojas y afectar el rendimiento. A su vez se observará pústulas o puntos blancos, ocasionados por el adulto al succionar la savia.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En el follaje</Nombre>
+        <rdfs:comment>galerías y puntos blancos en el follaje</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint56 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint56">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf26"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Este insecto pica y chupa la savia, debilita considerablemente a la planta y ocasiona un estancamiento de su desarrollo; como consecuencia se produce la marchitez o enrollamiento de las hojas. Además, segregan una sustancia azucarada sobre la que se desarrolla el hongo negro de la fumagina que interfiere con la fotosíntesis de la planta y acelera la defoliación.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la planta</Nombre>
+        <rdfs:comment>debilitamiento de la planta</rdfs:comment>
+        <rdfs:comment>defioliación</rdfs:comment>
+        <rdfs:comment>estacamiento de su desarrollo</rdfs:comment>
+        <rdfs:comment>marchitez o enrollamiento de la hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint57 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint57">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf27"/>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En las hojas</Nombre>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los adultos y ninfas pican y succionan la savia en el envés de las hojas y producen puntitos o pequeñas manchas blancas en el haz. En casos severos se producen encrespamiento del limbo hacia abajo y quemado de bordes y puntas de los foliolos.</Nombre>
+        <rdfs:comment>puntitos o pequeñas manchas en las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint58 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint58">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf28"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los trips raspan con sus piezas bucales las células de la epidermis de la cara inferior de las hojas y chupan el contenido celular; como consecuencia, en las hojas se observan manchas blanco-sucias y puntas amarillentos. Se produce encarrujamiento de los brotes. Los daños son mayores en condiciones de clima seco.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En las hojas</Nombre>
+        <rdfs:comment>encarrujamiento de los brotes</rdfs:comment>
+        <rdfs:comment>machas blanco-sucias y puntas amarillentas en las hojas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint59 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint59">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf29"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las larvas perforan y barrenan activamente el interior de tallos y ramas donde producen galerías longitudinales. Pueden pasar de una planta a otra.  Los daños se reconocen por la presencia de residuos de alimentación y excrementos unidos por finos hilos en las axilas de los tallos, que cubren los orificios de entrada de larvas. Pueden llegar a producir marchitez y muerte de la planta cuando el ataque es fuerte.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tallos y ramas</Nombre>
+        <rdfs:comment>marchitez y muerte de la planta</rdfs:comment>
+        <rdfs:comment>perforaciones en el interior de los tallos y ramas</rdfs:comment>
+        <rdfs:comment>residuos de excremento en las axilas de los tallos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint6 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint6">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf2"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los tubérculos afectados, muestran externamente, áreas o manchas necróticas y una secreción acuosa que aflora por las yemas y/o lenticelas. Cuando los tubérculos enfermos se cortan transversalmente, la superficie de corte tiene una textura esponjosa y si se presiona con la yema de los dedos, discurre una secreción acuosa.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En tubérculos</Nombre>
+        <rdfs:comment>secreción acuosa que alofra por las yemas y/o lenticelas</rdfs:comment>
+        <rdfs:comment>una textura esponjosa en la superficie cuando se corta transversalmente</rdfs:comment>
+        <rdfs:comment>áreas o manchas necrófitas externamente</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint60 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint60">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf30"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las larvas dañan hojas y brotes produciendo minas alargadas de aspecto blanco sucio sobre la nervadura central de la hoja; otras veces unen las hojas formando un estuche en el cual se alimentan. También perforan los brotes. Como consecuencia de los daños, el brote detiene el crecimiento; las hojas se marchitan y pueden llegar a secarse completamente.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En la hojas y brotes</Nombre>
+        <rdfs:comment>marchitez de la hojas</rdfs:comment>
+        <rdfs:comment>minas alargadas en la parte central de las hojas</rdfs:comment>
+        <rdfs:comment>perforaciones en los brotes</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint61 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint61">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf31"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los daños ocurren en la primera edad del cultivo, las larvas cortan las plantitas a la altura del cuello o raspan los tallos barrenándolos hasta la médula en plantas adultas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En las plantas</Nombre>
+        <rdfs:comment>cortes en las plantas a la altura del cuello</rdfs:comment>
+        <rdfs:comment>raspones en los tallos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint62 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint62">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf31"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Las larvas perforan los tubérculos haciendo agujeros grandes irregulares y profundos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tubérculos</Nombre>
+        <rdfs:comment>perforaciones grandes y profundas en los tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint63 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint63">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf32"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La hembra de esta especie deposita sus huevos en el suelo cerca de las plantas para que las larvas penetren el suelo y se alimenten de las raíces y tubérculos.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En las raíces y los tubérculos</Nombre>
+        <rdfs:comment>daños de las raíces y tubérculos</rdfs:comment>
+        <rdfs:comment>huevos cerca de las plantas</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint64 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint64">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf33"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Los daños son ocasionados por las larvas que realizan perforaciones profundas en los tubérculos, con galerías angostas.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En los tubérculos</Nombre>
+        <rdfs:comment>galerías angostas en los tubérculos</rdfs:comment>
+        <rdfs:comment>perforaciones profundas en los tubérculos</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint7 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint7">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad afecta a los brotes del tubérculo semilla en los estados de pre y post emergencia. Los brotes afectados muestran en la base lesiones necróticas de color marrón, que cuando son profundas los estrangulan. Sin embargo, aún en este estado, la planta puede desarrollar desde la parte inferior del tallo estrangulado, brotes nuevos, que si no son afectados emergen finalmente del suelo.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En plantas</Nombre>
+        <rdfs:comment>lesiones necrofitas de color marrón en la base</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint8 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint8">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad ataca a los estolones, ocasionando lesiones necróticas que pueden estrangularlos o matarlos. Cuando esto ocurre, los tubérculos que están en pleno desarrollo se quedan pequeños.</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En estolones</Nombre>
+        <rdfs:comment>falta de crecimiento (los tubérculos se quedan pequeños)</rdfs:comment>
+        <rdfs:comment>lesiones necrófitas en los estolones</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://localhost:3030/ontopotato/data#sint9 -->
+
+    <owl:NamedIndividual rdf:about="http://localhost:3030/ontopotato/data#sint9">
+        <rdf:type rdf:resource="http://localhost:3030/ontopotato/data#Sintoma"/>
+        <es_sintoma_de rdf:resource="http://localhost:3030/ontopotato/data#inf3"/>
+        <Descripcion rdf:datatype="http://www.w3.org/2001/XMLSchema#string">La enfermedad afecta a las raíces y como consecuencia produce encarrujamiento de las hojas apicales. En algunos casos este síntoma puede ser confundido con el producido por el virus del enrollamiento de la papa (PLRV).</Descripcion>
+        <Nombre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">En raíces</Nombre>
+        <rdfs:comment>encarrujamiento de las hojas apicales</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
