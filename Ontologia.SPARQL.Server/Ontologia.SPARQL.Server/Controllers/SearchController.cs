@@ -37,7 +37,7 @@ namespace Ontologia.SPARQL.Server.Controllers
             Description = "Send a list with symptoms data from plaga infections",
             OperationId = "GetSymptomsFromPlagas"
         )]
-        [SwaggerResponse(200, "Symptoms from plagas", typeof(IEnumerable<SymptomQuery>))]
+        [SwaggerResponse(200, "Symptoms from plagas", typeof(IEnumerable<SintomaQuery>))]
         [ProducesResponseType(typeof(IEnumerable<ResponseQuery>), 200)]
         [Produces("application/json")]
         public ActionResult GuidedSearchPlaga()
@@ -51,8 +51,8 @@ namespace Ontologia.SPARQL.Server.Controllers
             Description = "Send a list with symptoms data from enfermedad infections",
             OperationId = "GetSymptomsFromEnfermedades"
         )]
-        [SwaggerResponse(200, "Symptoms from enfermedades", typeof(IEnumerable<SymptomQuery>))]
-        [ProducesResponseType(typeof(IEnumerable<SymptomQuery>), 200)]
+        [SwaggerResponse(200, "Symptoms from enfermedades", typeof(IEnumerable<SintomaQuery>))]
+        [ProducesResponseType(typeof(IEnumerable<SintomaQuery>), 200)]
         [Produces("application/json")]
         public ActionResult GuidedSearchEnfermedad()
         {

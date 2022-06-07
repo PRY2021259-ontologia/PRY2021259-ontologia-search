@@ -1,6 +1,6 @@
 ﻿namespace Ontologia.SPARQL.Server.Models
 {
-    public class SymptomQuery
+    public class SintomaQuery
     {
         public string SintomaId { get; set; }
         public string SintomaComentario { get; set; }
