@@ -122,8 +122,9 @@ public class SearchService
         var pst = new PersistentTripleStore(fuseki);
         var sparqlQuery = new SparqlParameterizedString();
         sparqlQuery.Namespaces.AddNamespace("data", new Uri($"{dataUrl}#"));
-        sparqlQuery.CommandText = "SELECT ?Descripcion ?NombreComun ?NombreCientifico ?Tipo " +
+        sparqlQuery.CommandText = "SELECT ?Descripcion ?NombreComun ?NombreCientifico ?Tipo ?AfectaUnPorcentajeDeHasta " +
                                   "WHERE { " +
+                                  $"data:{ontologyId} data:AfectaUnPorcentajeDeHasta ?AfectaUnPorcentajeDeHasta. " +
                                   $"data:{ontologyId} data:NombreComun ?NombreComun. " +
                                   $"data:{ontologyId} data:Tipo ?Tipo. " +
                                   $"data:{ontologyId} data:NombreCientifico ?NombreCientifico. " +
@@ -275,9 +276,18 @@ public class SearchService
 
     private InfeccionGraph convertSparqlResultToInfeccionGraph(SparqlResult result, string ontologyId)
     {
+        var decimalFromText = result["AfectaUnPorcentajeDeHasta"].ToString().IndexOf("^");
+        var decimalString = "0";
+        if (decimalFromText != 0)
+        {
+            decimalString = result["AfectaUnPorcentajeDeHasta"].ToString().Substring(0, decimalFromText);
+        }
+        
+        var afectaATemp = decimal.Parse(decimalString);
         var resource = new InfeccionGraph()
         {
             Descripcion = result["Descripcion"].ToString(),
+            AfectaA = afectaATemp == 0? null: afectaATemp,
             Tipo = result["Tipo"].ToString(),
             NombreCientifico = result["NombreCientifico"].ToString(),
             NombreComun = result["NombreComun"].ToString(),

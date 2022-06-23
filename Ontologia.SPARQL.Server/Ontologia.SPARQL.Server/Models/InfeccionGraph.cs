@@ -7,6 +7,7 @@ public class InfeccionGraph
     public string Tipo { get; set; }
     public string NombreCientifico { get; set; }
     public string Descripcion { get; set; }
+    public decimal? AfectaA { get; set; }
     public IEnumerable<SintomaData> Sintomas { get; set; }
     public IEnumerable<AgenteCausalData> AgentesCausales { get; set; }
 }
